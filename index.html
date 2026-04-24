@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Circle World</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen">
+        <div class="login-box">
+            <h1>🌍 Circle World</h1>
+            <input type="text" id="username-input" placeholder="Enter username" maxlength="15">
+            <div class="color-picker">
+                <label>Choose your color:</label>
+                <input type="color" id="color-input" value="#3498db">
+            </div>
+            <div class="room-section">
+                <input type="text" id="room-input" placeholder="Room code (or leave empty to create)">
+            </div>
+            <button id="join-btn">Play</button>
+            <p id="error-msg"></p>
+            <p class="instructions">Create a room or join an existing one with friends!</p>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="hidden">
+        <!-- Minimap -->
+        <div id="minimap-container">
+            <canvas id="minimap"></canvas>
+            <div class="minimap-label">Map</div>
+        </div>
+
+        <!-- Chat Icon -->
+        <div id="chat-icon" title="Chat (Enter)">💬</div>
+
+        <!-- Chat Input -->
+        <div id="chat-input-container" class="hidden">
+            <input type="text" id="chat-input" placeholder="Type message..." maxlength="100">
+            <button id="send-chat">Send</button>
+        </div>
+
+        <!-- Chat Log -->
+        <div id="chat-log"></div>
+
+        <!-- Room Info -->
+        <div id="room-info">
+            <span id="room-code"></span>
+            <span id="player-count"></span>
+        </div>
+
+        <!-- Main Canvas -->
+        <canvas id="game-canvas"></canvas>
+
+        <!-- Controls Info -->
+        <div id="controls-info">
+            WASD or Arrow Keys to move | Enter to chat
+        </div>
+
+        <!-- Mobile Joystick -->
+        <div id="joystick-container">
+            <div id="joystick">
+                <div id="joystick-knob"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="[unpkg.com](https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js)"></script>
+    <script src="game.js"></script>
+</body>
+</html>
